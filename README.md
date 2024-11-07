@@ -23,9 +23,10 @@ Tabla Autor
 Contiene los datos de los autores de los mangas.
 
 | Campo | Tipo | Descripción |
-id	INT (PK)	Identificador único del autor.
-nombre	VARCHAR(255)	Nombre del autor.
-nacionalidad	VARCHAR(100)	Nacionalidad del autor.
+| --- | --- | --- |
+| id | INT (PK) |	Identificador único del autor. |
+|nombre |	VARCHAR(255)	| Nombre del autor.|
+|nacionalidad |	VARCHAR(100) | Nacionalidad del autor.|
 
 Tabla Genero
 Almacena los géneros disponibles para clasificar los mangas, como Aventura, Fantasía, etc.
