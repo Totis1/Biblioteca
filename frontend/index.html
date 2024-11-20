@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Virtual de Mangas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        header, footer {
+            background-color: #0a0909d8; /* Fondo oscuro */
+            color: #f8f9fa; /* Texto claro */
+        }
+
+        .card-title {
+            color: #343a40; /* Títulos oscuros */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
 <!-- Encabezado -->
-<header class="bg-dark text-white text-center py-4">
+<header class="text-center py-4">
     <h1>Bienvenidos a la Biblioteca Virtual</h1>
     <p>Tu colección de mangas favoritos, siempre disponible en línea.</p>
 </header>
@@ -40,6 +59,8 @@
     </div>
 </nav>
 
+
+
 <!-- Sección de mangas destacados -->
 <section class="container my-5">
     <h2 class="text-center">Mangas Destacados</h2>
@@ -48,30 +69,28 @@
         <!-- Ejemplo de Manga -->
         <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Portada Manga 1">
-                <div class="card-body">
+                <img src="/frontend/images/kimetsu.jpg" class="card-img-top" alt="Portada Manga 1">
+                <div class="card-body" style="background-color: #7598B9">
                     <h5 class="card-title">Título del Manga 1</h5>
                     <p class="card-text">Un breve resumen o descripción del manga.</p>
                     <a href="#" class="btn btn-primary">Leer Manga</a>
                 </div>
             </div>
         </div>
-        <!-- Otro Manga -->
         <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Portada Manga 2">
-                <div class="card-body">
+                <div class="card-body" style="background-color: #7598B9">
                     <h5 class="card-title">Título del Manga 2</h5>
                     <p class="card-text">Un breve resumen o descripción del manga.</p>
                     <a href="#" class="btn btn-primary">Leer Manga</a>
                 </div>
             </div>
         </div>
-        <!-- Otro Manga -->
         <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Portada Manga 3">
-                <div class="card-body">
+                <div class="card-body" style="background-color: #7598B9">
                     <h5 class="card-title">Título del Manga 3</h5>
                     <p class="card-text">Un breve resumen o descripción del manga.</p>
                     <a href="#" class="btn btn-primary">Leer Manga</a>
@@ -81,8 +100,245 @@
     </div>
 </section>
 
+<style>
+    /* Controles del carrusel */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 8%; /* Hacerlos más grandes */
+        top: 50%; /* Centrar verticalmente */
+        transform: translateY(-50%); /* Asegura que estén centrados verticalmente */
+    }
+
+    .carousel-control-prev {
+        left: -50px; /* Mover hacia la izquierda fuera del contenido */
+    }
+
+    .carousel-control-next {
+        right: -50px; /* Mover hacia la derecha fuera del contenido */
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+        border-radius: 50%; /* Forma circular */
+        padding: 15px; /* Tamaño más grande */
+    }
+
+    /* Espaciado interno entre tarjetas */
+    .carousel-inner .row {
+        margin: 0 15px;
+    }
+
+    .carousel-inner .card {
+        margin: 10px; /* Espaciado entre las tarjetas */
+    }
+</style>
+<!-- Sección de Nuevos Mangas con Carrusel -->
+<section class="container my-5">
+    <h2 class="text-center">Nuevos de la Semana</h2>
+    <p class="text-center mb-4">Explora las novedades recién agregadas.</p>
+    <div id="newMangasCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#newMangasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#newMangasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#newMangasCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Contenido del Carrusel -->
+        <div class="carousel-inner">
+            <!-- Primera diapositiva -->
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 1</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 2</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 3</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 4</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda diapositiva -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 5</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 6">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 6</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 7">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 7</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 8">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 8</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tercera diapositiva -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 9">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 9</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 10">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 10</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 11">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 11</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Manga 12">
+                            <div class="card-body">
+                                <h5 class="card-title">Manga 12</h5>
+                                <p class="card-text">Descripción breve del manga.</p>
+                                <a href="#" class="btn btn-primary">Leer Más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles del Carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#newMangasCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newMangasCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</section>
+
+
+<!-- Sección de Mangas por Géneros -->
+<section class="container my-5">
+    <h2 class="text-center">Géneros Destacados</h2>
+    <p class="text-center mb-4">Elige tus mangas favoritos según el género.</p>
+    <div class="row">
+        <!-- Acción -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Acción</h5>
+                    <p class="card-text">Mangas llenos de adrenalina y aventuras.</p>
+                    <a href="#" class="btn btn-primary">Ver Acción</a>
+                </div>
+            </div>
+        </div>
+        <!-- Romance -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Romance</h5>
+                    <p class="card-text">Las historias de amor más conmovedoras.</p>
+                    <a href="#" class="btn btn-primary">Ver Romance</a>
+                </div>
+            </div>
+        </div>
+        <!-- Comedia -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Comedia</h5>
+                    <p class="card-text">Ríe con los mangas más divertidos.</p>
+                    <a href="#" class="btn btn-primary">Ver Comedia</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Pie de página -->
-<footer class="bg-dark text-white text-center py-3">
+<footer class="text-center py-3">
     <p>&copy; 2024 Biblioteca Virtual de Mangas. Todos los derechos reservados.</p>
     <p>
         <a href="#" class="text-white">Política de Privacidad</a> |
