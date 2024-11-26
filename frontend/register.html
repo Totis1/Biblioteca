@@ -39,31 +39,40 @@
         <div class="col-12 col-md-6">
             <div class="card p-4 shadow-lg mb-3" style="background-color: rgba(42, 34, 34, 0.8); border-radius: 15px; border: none; color: white;">
                 <h2 class="text-center mb-4">Iniciar Sesión</h2>
-                <!-- Formulario de inicio de sesión -->
-                <form>
-                    <!-- Correo electrónico -->
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="nombre@correo.com" required>
-                    </div>
-                    <!-- Contraseña -->
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
-                    </div>
-                    <!-- Checkbox para recordar sesión -->
-                    <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="remember">
-                        <label class="form-check-label" for="remember">Recordarme</label>
-                    </div>
-                    <!-- Botón de inicio de sesión -->
-                    <button type="submit" class="btn btn-primary w-100 mb-2" style="background-color: #929CAA">Iniciar Sesión</button>
-                    <button type="submit" class="btn btn-success w-100" style="background-color: #7598B9">Registrarse</button>
-
-                </form>
             </div>
         </div>
 
+        <!-- Card de Registro -->
+        <div class="col-12 col-md-6">
+            <div class="card p-4 shadow-lg mb-3" style="background-color: rgba(42, 34, 34, 0.8); border-radius: 15px; border: none; color: white">
+                <h2 class="text-center mb-4">Registrarse</h2>
+                <!-- Formulario de registro -->
+                <form>
+                    <!-- Nombre de usuario -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nombre de Usuario</label>
+                        <input type="text" class="form-control" id="username" placeholder="Nombre de usuario" required>
+                    </div>
+                    <!-- Correo electrónico -->
+                    <div class="mb-3">
+                        <label for="emailRegister" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="emailRegister" placeholder="nombre@correo.com" required>
+                    </div>
+                    <!-- Contraseña -->
+                    <div class="mb-3">
+                        <label for="passwordRegister" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="passwordRegister" placeholder="Contraseña" required>
+                    </div>
+                    <!-- Confirmar contraseña -->
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar contraseña" required>
+                    </div>
+                    <!-- Botón de registro -->
+                    <button type="submit" class="btn btn-success w-100" style="background-color: #7598B9">Registrarse</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
