@@ -1,0 +1,107 @@
+header, footer {
+    background-color: #0a0909d8; /* Fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
+}
+
+.card-title {
+    color: #343a40; /* Títulos oscuros */
+}
+
+.btn-primary {
+    background-color: #202D36;
+    border-color: #202D36;
+}
+
+.btn-primary:hover {
+    background-color: #202D36;
+}
+
+.card-body-dest {
+    background-color: #5c7896cc; /* Destacados color de fondo */
+}
+
+.card-body-custom {
+    background-color: #929CAA; /* Carrusel color de fondo */
+}
+
+
+/* Controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%; /* Hacerlos más grandes */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Asegura que estén centrados verticalmente */
+}
+
+.carousel-control-prev {
+    left: -50px; /* Mover hacia la izquierda fuera del contenido */
+}
+
+.carousel-control-next {
+    right: -50px; /* Mover hacia la derecha fuera del contenido */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    border-radius: 50%; /* Forma circular */
+    padding: 15px; /* Tamaño más grande */
+}
+
+/* Espaciado interno entre tarjetas */
+.carousel-inner .row {
+    margin: 0 15px;
+}
+
+.carousel-inner .card {
+    margin: 10px; /* Espaciado entre las tarjetas */
+} 
+
+/* Estilos generales */
+body {
+    background-color: #f8f9fa; /* Color de fondo opcional */
+    color: #212529;
+}
+
+/* Card de inicio de sesión */
+.login-card {
+    background-color: rgba(42, 34, 34, 0.8); /* Fondo translúcido */
+    border-radius: 15px;
+    border: none;
+    color: white;
+    padding: 2rem; /* Equivalente a la clase p-4 */
+}
+
+/* Botones */
+.login-btn {
+    background-color: #929CAA;
+    border: none;
+}
+
+.login-btn:hover {
+    background-color: #818aa4; /* Efecto hover */
+}
+
+.register-btn {
+    background-color: #7598B9;
+    border: none;
+}
+
+.register-btn:hover {
+    background-color: #5f829f; /* Efecto hover */
+}
+
+/* Input y etiquetas */
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+/* Opcional: mejorar la apariencia del checkbox */
+.form-check-label {
+    margin-left: 5px;
+    font-size: 0.9rem;
+}

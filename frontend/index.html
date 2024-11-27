@@ -5,25 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Virtual de Mangas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        header, footer {
-            background-color: #0a0909d8; /* Fondo oscuro */
-            color: #f8f9fa; /* Texto claro */
-        }
-
-        .card-title {
-            color: #343a40; /* Títulos oscuros */
-        }
-
-        .btn-primary {
-            background-color: #202D36;
-            border-color: #202D36;
-        }
-
-        .btn-primary:hover {
-            background-color: #202D36;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
@@ -68,7 +50,7 @@
         <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="./images/kimetsu.jpg" class="card-img-top" alt="Portada Manga 1">
-                <div class="card-body" style="background-color: #5c7896cc">
+                <div class="card-body card-body-dest">
                     <h5 class="card-title">Demon Slayer</h5>
                     <p class="card-text">Una historia épica de demonios y espadas.</p>
                     <a href="#" class="btn btn-primary">Leer Manga</a>
@@ -78,7 +60,7 @@
         <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="./images/myhero.jpg" class="card-img-top" alt="Portada Manga 2">
-                <div class="card-body" style="background-color: #5c7896cc">
+                <div class="card-body card-body-dest">
                     <h5 class="card-title">My Hero Academia</h5>
                     <p class="card-text">La historia de un chico sin poderes en un mundo de héroes que busca convertirse en el mejor.</p>
                     <a href="#" class="btn btn-primary">Leer Manga</a>
@@ -88,7 +70,7 @@
         <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="./images/onepiece.jpg" class="card-img-top" alt="Portada Manga 3">
-                <div class="card-body" style="background-color: #5c7896cc">
+                <div class="card-body card-body-dest">
                     <h5 class="card-title">One Piece</h5>
                     <p class="card-text">Aventuras de piratas en busca del tesoro legendario.</p>
                     <a href="#" class="btn btn-primary">Leer Manga</a>
@@ -97,39 +79,38 @@
         </div>
     </div>
 </section>
-
 <style>
-    /* Controles del carrusel */
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 8%; /* Hacerlos más grandes */
-        top: 50%; /* Centrar verticalmente */
-        transform: translateY(-50%); /* Asegura que estén centrados verticalmente */
+ /* Controles del carrusel */
+ .carousel-control-prev,
+ .carousel-control-next {
+      width: 8%; /* Hacerlos más grandes */
+     top: 50%; /* Centrar verticalmente */
+     transform: translateY(-50%); /* Asegura que estén centrados verticalmente */
     }
 
-    .carousel-control-prev {
-        left: -50px; /* Mover hacia la izquierda fuera del contenido */
+ .carousel-control-prev {
+     left: -50px; /* Mover hacia la izquierda fuera del contenido */
     }
 
-    .carousel-control-next {
-        right: -50px; /* Mover hacia la derecha fuera del contenido */
+ .carousel-control-next {
+     right: -50px; /* Mover hacia la derecha fuera del contenido */
     }
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
-        border-radius: 50%; /* Forma circular */
-        padding: 15px; /* Tamaño más grande */
+ .carousel-control-prev-icon,
+ .carousel-control-next-icon {
+     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+     border-radius: 50%; /* Forma circular */
+     padding: 15px; /* Tamaño más grande */
     }
 
-    /* Espaciado interno entre tarjetas */
-    .carousel-inner .row {
-        margin: 0 15px;
+ /* Espaciado interno entre tarjetas */
+ .carousel-inner .row {
+     margin: 0 15px;
     }
 
-    .carousel-inner .card {
-        margin: 10px; /* Espaciado entre las tarjetas */
-    }
+ .carousel-inner .card {
+     margin: 10px; /* Espaciado entre las tarjetas */
+    } 
 </style>
 <!-- Sección de Nuevos Mangas con Carrusel -->
 <section class="container my-5">
@@ -151,7 +132,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/jj.jpg" class="card-img-top" alt="Manga 1">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Jujutsu Kaisen</h5>
                                 <p class="card-text">Un joven lucha contra maldiciones usando técnicas de hechicería en un mundo sobrenatural.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -161,7 +142,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/bleach.jpg" class="card-img-top" alt="Manga 2">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Bleach</h5>
                                 <p class="card-text">Ichigo se convierte en un shinigami para proteger a los vivos y al mundo espiritual.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -171,7 +152,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/Chainsaw.jpg" class="card-img-top" alt="Manga 3">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Chainsaw Man</h5>
                                 <p class="card-text">Un joven cazador de demonios se fusiona con un demonio motosierra para sobrevivir.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -181,7 +162,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/Dandadan.jpg" class="card-img-top" alt="Manga 4">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Dandadan</h5>
                                 <p class="card-text">Una mezcla de humor, acción y romance mientras enfrentan fantasmas y alienígenas.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -197,7 +178,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/DragonBallS.jpg" class="card-img-top" alt="Manga 5">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Dragon Ball Super</h5>
                                 <p class="card-text">Goku y sus amigos enfrentan poderosos enemigos mientras exploran nuevos universos.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -205,9 +186,9 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card" style="background-color: #929CAA">
+                        <div class="card">
                             <img src="./images/hunter.jpg" class="card-img-top" alt="Manga 6">
-                            <div class="card-body">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Hunter x Hunter</h5>
                                 <p class="card-text">Gon y sus amigos enfrentan desafíos mientras persiguen sus sueños como cazadores</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -217,7 +198,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/naruto.jpg" class="card-img-top" alt="Manga 7">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Naruto</h5>
                                 <p class="card-text">La historia de un ninja soñador que busca convertirse en el líder de su aldea.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -227,7 +208,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/Oshi.jpg" class="card-img-top" alt="Manga 8">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Oshi no Ko</h5>
                                 <p class="card-text">Un giro inesperado en la vida de ídolos y sus secretos ocultos.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -243,7 +224,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/pokemon.jpg" class="card-img-top" alt="Manga 9">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Pokemon</h5>
                                 <p class="card-text">Entrenadores y sus Pokémon viven aventuras épicas en busca de ser los mejores.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -253,7 +234,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/onepunch.jpg" class="card-img-top" alt="Manga 10">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">One Punch Man</h5>
                                 <p class="card-text">Un héroe invencible enfrenta el aburrimiento de derrotar a todos con un solo golpe.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -263,7 +244,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/saiki.jpg" class="card-img-top" alt="Manga 11">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Saiki Kusuo no Psi-nan</h5>
                                 <p class="card-text">Un psíquico adolescente intenta vivir una vida normal, pero sus poderes siempre causan caos.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
@@ -273,7 +254,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <img src="./images/spy.jpg" class="card-img-top" alt="Manga 12">
-                            <div class="card-body" style="background-color: #929CAA">
+                            <div class="card-body card-body-custom">
                                 <h5 class="card-title">Spy x Family</h5>
                                 <p class="card-text">Un espía debe formar una falsa familia para cumplir una misión, sin saber que su "esposa" es una asesina y su "hija" puede leer mentes.</p>
                                 <a href="#" class="btn btn-primary">Leer Más</a>
