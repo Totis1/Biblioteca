@@ -10,17 +10,15 @@
             $usuario = new Usuario();
             $usuario->nombre = $data['nombre'];
             $usuario->email = $data['email'];
-            $usuario->contraseña = password_hash($data['contraseña'], PASSWORD_DEFAULT);
-            $usuario->foto_perfil = $data['foto_perfil'];
-            $usuario->fecha_registro = date('Y-m-d H:i:s');
-            $this->usuarioRepository->crearUsuario($usuario);
+            $usuario->contrasena = password_hash($data['contrasena'], PASSWORD_BCRYPT);
+            return $this->usuarioRepository->crearUsuario($usuario);
         }
         public function actualizarUsuario($data) {
             $usuario = new Usuario();
             $usuario->id = $data['id'];
             $usuario->nombre = $data['nombre'];
             $usuario->email = $data['email'];
-            $usuario->contraseña = password_hash($data['contraseña'], PASSWORD_DEFAULT);
+            $usuario->contrasena = password_hash($data['contrasena'], PASSWORD_BCRYPT);
             $usuario->foto_perfil = $data['foto_perfil'];
             $usuario->fecha_registro = date('Y-m-d H:i:s');
             $this->usuarioRepository->actualizarUsuario($usuario);
