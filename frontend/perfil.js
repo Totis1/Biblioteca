@@ -51,11 +51,11 @@ const actualizarImagen = async (id, imagen) => {
 }
 
 submitBtn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    await actualizarUsuario();
+    e.preventDefault()
+    await actualizarUsuario()
 })
 
 submitBtn.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    await actualizarUsuario();
+    e.preventDefault()
+    await actualizarUsuario()
 })

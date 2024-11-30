@@ -42,7 +42,7 @@
             <div class="card login-card shadow-lg mb-3">
                 <h2 class="text-center mb-4">Iniciar Sesión</h2>
                 <!-- Formulario de inicio de sesión -->
-                <form>
+                <form id="frmLogin">
                     <!-- Correo electrónico -->
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo Electrónico</label>
@@ -59,7 +59,7 @@
                         <label class="form-check-label" for="remember">Recordarme</label>
                     </div>
                     <!-- Botones -->
-                    <button type="submit" class="btn btn-primary w-100 mb-2 login-btn">Iniciar Sesión</button>
+                    <button type="submit" class="btn btn-primary w-100 mb-2 login-btn" id="submitBtn">Iniciar Sesión</button>
                     <button type="button" class="btn btn-success w-100 register-btn" onclick="window.location.href='./register.html'">Registrarse</button>
                 </form>
             </div>
@@ -67,6 +67,7 @@
     </div>
 </div>
 
+<script src="./login.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

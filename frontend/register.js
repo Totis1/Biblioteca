@@ -32,10 +32,10 @@ const crearUsuario = async () => {
 
 submitBtn.addEventListener('click', async (e) => {
     e.preventDefault();
-    await crearUsuario();
+    crearUsuario();
 })
 
 submitBtn.addEventListener('submit', async (e) => {
     e.preventDefault();
-    await crearUsuario();
+    crearUsuario();
 })
