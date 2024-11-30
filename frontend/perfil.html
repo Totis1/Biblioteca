@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Perfil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            text-align: left;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Actualizar Perfil</h2>
+        <!-- Formulario para actualizar perfil -->
+        <form id="frmActualizar" >
+            
+            <!-- Mostrar imagen de perfil actual 
+            <div class="profile-img-container">
+                <img src="ruta_a_imagen_actual.jpg" alt="Foto de Perfil" class="profile-img" id="profile-img">
+            </div> -->
+            
+            <!-- Campo para cambiar imagen -->
+            <div class="form-group">
+                <label for="foto_perfil">Cambiar Foto de Perfil:</label>
+                <input type="file" name="foto_perfil" id="foto_perfil" accept="image/*">
+            </div>
+
+             <!-- Campo para nombre -->
+            <div class="form-group">
+                <label for="nombre">ID:</label>
+                <input type="text" name="ID" id="id" placeholder="Tu id" required>
+            </div>
+            
+            <!-- Campo para nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <!-- Campo para email -->
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required>
+            </div>
+
+            <!-- Campo para contraseña -->
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" id="contrasena" placeholder="Tu nueva contraseña" required>
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" id="submitBtn" >Actualizar Perfil</button>
+        </form>
+    </div>
+
+<script src="./perfil.js"></script>
+</body>
+</html>

@@ -20,16 +20,14 @@
             return ['mensaje'=> 'Error al crear el Usuario'];
         }
         public function actualizarUsuario($Usuario){
-            $sql = "UPDATE usuarios SET nombre = :nombre, email = :email, contrasena = :contrasena, foto_perfil = :foto_perfil, fecha_registro = :fecha_registro WHERE id = :id";
+            $sql = "UPDATE usuarios SET nombre = :nombre, email = :email, contrasena = :contrasena WHERE id = :id";
             $resultado = $this->conn->prepare($sql);
             $resultado->bindParam(":id", $Usuario->id);
             $resultado->bindParam(":nombre", $Usuario->nombre);
             $resultado->bindParam(":email", $Usuario->email);
             $resultado->bindParam(":contrasena", $Usuario->contrasena);
-            $resultado->bindParam(":foto_perfil", $Usuario->foto_perfil);
-            $resultado->bindParam(":fecha_registro", $Usuario->fecha_registro);
             if($resultado->execute()){
-                return ['mensaje' => 'Usuario Actualizado'];
+                return ['mensaje' => 'Usuario SemiActualizado'];
             }
             return ['mensaje'=> 'Error al actualizar el Usuario'];
         }
@@ -56,6 +54,15 @@
                 return $resultado->fetchAll(PDO::FETCH_ASSOC);
             }
             return ['mensaje'=> 'Error al consultar la lista de usuarios por rol'];
+        }
+        public function loginUsuario($correo){
+            #echo $correo;
+            $sql = 'SELECT * FROM usuarios WHERE email = :email';
+            #echo $sql;
+            $resultado = $this->conn->prepare($sql);
+            $resultado->bindParam(':email', $correo);
+            $resultado->execute();
+            return $resultado->fetch(PDO::FETCH_ASSOC);
         }
     }
 ?>

@@ -40,5 +40,10 @@
         return json_encode($usuarioController->listaUsuariosRol($rol));
     });
 
+    $router->get('/login',function() use($usuarioController){
+        $correo = json_decode(file_get_contents('php://input'), true);
+        return json_encode($usuarioController->loginUsuario($correo));
+    });
+
     $router->dispatch();
 ?>

@@ -5,5 +5,6 @@
         public function eliminarUsuario($id);
         public function listaUsuarios();
         public function listaUsuariosRol($rol);
+        public function loginUsuario($Usuario);
     }
 ?>
