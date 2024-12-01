@@ -1,4 +1,4 @@
-const apiUrl = 'https://localhost/biblioteca/src/index.php'
+const apiUrl = 'http://localhost/biblioteca/src/index.php'
 const frmLogin = document.getElementById("frmLogin")
 const submitBtn = document.getElementById("submitBtn")
 

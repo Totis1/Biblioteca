@@ -11,10 +11,16 @@
 
     require_once BASEPATH.'/simpleRouter.php';
     require_once BASEPATH.'/controllers/usuarioController.php';
+    require_once BASEPATH.'/controllers/generoController.php';
+    require_once BASEPATH.'/controllers/autorController.php';
+    require_once BASEPATH.'/controllers/mangaController.php';
     require_once BASEPATH.'/middleware/authMiddleware.php';
 
     $router = new SimpleRouter();
     $usuarioController = new usuarioController();
+    $generoController = new generoController();
+    $autorController = new autorController();
+    $mangaController = new mangaController();
 
     $router->post('/usuarios',function() use($usuarioController){
         $data = json_decode(file_get_contents('php://input'), true);
@@ -43,6 +49,28 @@
     $router->post('/login',function() use($usuarioController){
         $correo = json_decode(file_get_contents('php://input'), true);
         return json_encode($usuarioController->loginUsuario($correo));
+    });
+    
+    $router->post('/generos',function() use($generoController){
+        $data = json_decode(file_get_contents('php://input'), true);
+        return json_encode($generoController->crearGenero($data));
+    });
+
+    $router->get('/generos',function() use($generoController){
+        return json_encode($generoController->listaGeneros());
+    });
+
+    $router->post('/autores',function() use($autorController){
+        $data = json_decode(file_get_contents('php://input'), true);
+        return json_encode($autorController->crearAutor($data));
+    });
+
+    $router->get('/autores',function() use($autorController){
+        return json_encode($autorController->listaAutores());
+    });
+
+    $router->get('/mangas',function() use($mangaController){
+        return json_encode($mangaController->mostrarMangas());
     });
 
     $router->dispatch();

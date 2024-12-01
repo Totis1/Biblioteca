@@ -1,7 +1,7 @@
-const apiUrl = 'https://localhost/biblioteca/src/index.php'
+const apiUrl = 'http://localhost/biblioteca/src/index.php'
 const frmActualizar = document.getElementById("frmActualizar")
 const submitBtn = document.getElementById("submitBtn")
-const apinewUrl = 'https://localhost/biblioteca/src/routes/ImagenUsuarioRoute.php'
+const apinewUrl = 'http://localhost/biblioteca/src/routes/ImagenUsuarioRoute.php'
 
 const actualizarUsuario = async () => {
     const imagen = document.getElementById('foto_perfil').files[0]
@@ -52,10 +52,10 @@ const actualizarImagen = async (id, imagen) => {
 
 submitBtn.addEventListener('click', async (e) => {
     e.preventDefault()
-    await actualizarUsuario()
+    actualizarUsuario()
 })
 
 submitBtn.addEventListener('submit', async (e) => {
     e.preventDefault()
-    await actualizarUsuario()
+    actualizarUsuario()
 })
