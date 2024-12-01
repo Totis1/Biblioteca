@@ -10,20 +10,19 @@
             $usuario = new Usuario();
             $usuario->nombre = $data['nombre'];
             $usuario->email = $data['email'];
-            $usuario->contraseña = password_hash($data['contraseña'], PASSWORD_DEFAULT);
-            $usuario->foto_perfil = $data['foto_perfil'];
-            $usuario->fecha_registro = date('Y-m-d H:i:s');
-            $this->usuarioRepository->crearUsuario($usuario);
+            $usuario->contrasena = password_hash($data['contrasena'], PASSWORD_BCRYPT);
+            return $this->usuarioRepository->crearUsuario($usuario);
         }
         public function actualizarUsuario($data) {
             $usuario = new Usuario();
             $usuario->id = $data['id'];
             $usuario->nombre = $data['nombre'];
             $usuario->email = $data['email'];
-            $usuario->contraseña = password_hash($data['contraseña'], PASSWORD_DEFAULT);
-            $usuario->foto_perfil = $data['foto_perfil'];
-            $usuario->fecha_registro = date('Y-m-d H:i:s');
-            $this->usuarioRepository->actualizarUsuario($usuario);
+            // Actualización condicional de la contraseña
+            if (!empty($data['contrasena'])) {
+                $usuario->contrasena = password_hash($data['contrasena'], PASSWORD_BCRYPT);
+            }
+            return $this->usuarioRepository->actualizarUsuario($usuario);
         }
         public function eliminarUsuario($id) {
             return $this->usuarioRepository->eliminarUsuario($id['id']);
@@ -33,6 +32,9 @@
         }
         public function listaUsuariosRol($rol) {
             return $this->usuarioRepository->listaUsuariosRol($rol);
+        }
+        public function loginUsuario($correo) {
+            return $this->usuarioRepository->loginUsuario($correo['email']);
         }
     }
 ?>

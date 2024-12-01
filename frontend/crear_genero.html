@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual de Mangas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<!-- Encabezado -->
+<header class="text-center py-4">
+    <h1>Bienvenidos a la Biblioteca Virtual</h1>
+    <p>Tu colección de mangas favoritos, siempre disponible en línea.</p>
+</header>
+
+<main role="main" class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1>Crear un Genero</h1>
+            <h2>*Es necesario llenar los siguientes campos.</h2>
+            <div class="card">
+                <div class="card-body">
+                    <form id="registerForm" class="form-horizontal-edit" >
+                        <div class="form-group">
+                            <label for="nombre" class="col-form-label col-12">Genero</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del género" required type="text">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-4 offset-sm-2">
+                                <a class="btn btn-danger btn-block" href=""><i class="fas fa-times"></i> Cancelar</a>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <button type="submit" class="btn btn-success btn-block" id="submitBtn"><i class="fas fa-save"></i> Crear</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<br><br><br>
+<!-- Pie de página -->
+<footer class="text-center py-3">
+    <p>&copy; 2024 Biblioteca Virtual de Mangas. Todos los derechos reservados.</p>
+    <p>
+        <a href="#" class="text-white">Política de Privacidad</a> |
+        <a href="#" class="text-white">Términos y Condiciones</a>
+    </p>
+</footer>
+
+<script src="./crear_genero.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

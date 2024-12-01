@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,31 +19,41 @@
     <p>Tu colección de mangas favoritos, siempre disponible en línea.</p>
 </header>
 
-<!-- Navegación -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Biblioteca de Mangas</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./buscador.html">Buscar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Géneros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-light" href="./login.html">Iniciar Sesión / Registrarse</a>
-                </li>
-            </ul>
+<!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Biblioteca de Mangas</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./mostrar.html">Biblioteca</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Verificar si el usuario está autenticado -->
+            <?php if (isset($_SESSION['user'])): ?>
+                <!-- Menú desplegable para usuario autenticado -->
+                <div class="dropdown ms-auto">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="data:image/*;base64,<?php echo htmlspecialchars($_SESSION['imagen'] ?? 'images/default.jpg'); ?>" alt="Imagen de usuario" width="30" height="30" class="rounded-circle me-2">
+                        <?php echo htmlspecialchars($_SESSION['user']); ?>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                        <li><a class="dropdown-item" href="crear_manga.html">Subir Manga</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="logout.php">Salir</a></li>
+                    </ul>
+                </div>
+            <?php else: ?>
+                <!-- Botón de login para usuarios no autenticados -->
+                <a href="login.php" class="btn btn-primary ms-auto">Iniciar Sesión</a>
+            <?php endif; ?>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <!-- Sección de mangas destacados -->
 <section class="container my-5">

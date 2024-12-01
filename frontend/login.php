@@ -1,3 +1,32 @@
+<?php
+    session_start();
+    include_once"../src/config/base.php";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $busca = 'SELECT * FROM usuarios WHERE email = ?';
+        $prep = $conexion->prepare($busca);
+        $prep->bind_param('s', $email);
+        $prep->execute();
+        $user = $prep->get_result();
+        if($user->num_rows > 0) {
+            $dato = $user->fetch_assoc();
+            if(password_verify($password, $dato['contrasena'])) {
+                $_SESSION['user'] = $dato['nombre'];
+                $_SESSION['imagen'] = base64_encode($dato['foto_perfil']);
+                header('Location:http://localhost/biblioteca/frontend/index.php');
+                exit();
+            } else {
+                $error = 'Contrasena Incorrecta';
+            }
+        } else {
+            $error = 'Usuario no encontrado';
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,16 +71,16 @@
             <div class="card login-card shadow-lg mb-3">
                 <h2 class="text-center mb-4">Iniciar Sesión</h2>
                 <!-- Formulario de inicio de sesión -->
-                <form>
+                <form id="frmLogin" method="post" actions="">
                     <!-- Correo electrónico -->
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="nombre@correo.com" required>
+                        <input type="email" class="form-control" id="email" placeholder="nombre@correo.com" name="email" required>
                     </div>
                     <!-- Contraseña -->
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password" required>
                     </div>
                     <!-- Checkbox para recordar sesión -->
                     <div class="form-check mb-3">
@@ -59,7 +88,7 @@
                         <label class="form-check-label" for="remember">Recordarme</label>
                     </div>
                     <!-- Botones -->
-                    <button type="submit" class="btn btn-primary w-100 mb-2 login-btn">Iniciar Sesión</button>
+                    <button type="submit" class="btn btn-primary w-100 mb-2 login-btn" id="submitBtn">Iniciar Sesión</button>
                     <button type="button" class="btn btn-success w-100 register-btn" onclick="window.location.href='./register.html'">Registrarse</button>
                 </form>
             </div>
