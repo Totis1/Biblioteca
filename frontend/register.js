@@ -1,7 +1,7 @@
 const apiUrl = 'http://localhost/biblioteca/src/index.php'
 const registerForm = document.getElementById("registerForm")
 const submitBtn = document.getElementById("submitBtn")
-
+const email = document.getElementById("emailRegister")
 document.addEventListener("DOMContentLoaded", () => {
 
 })
@@ -25,7 +25,7 @@ const crearUsuario = async () => {
     if (response.mensaje === 'Usuario Creado'){
         // Redirigir después de 3 segundos
         setTimeout(function() {
-            window.location.href = 'http://localhost/biblioteca/frontend/index.html';
+            window.location.href = 'http://localhost/biblioteca/frontend/index.php';
         }, 500);  // 3000 milisegundos = 3 segundos 
     }
 }

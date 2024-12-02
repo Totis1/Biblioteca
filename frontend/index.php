@@ -1,5 +1,12 @@
 <?php 
+    include_once("../src/config/base.php");
     session_start();
+    if (isset($_SESSION['user'])){
+        $user = $_SESSION['user'];
+        $query = "SELECT id FROM usuarios WHERE nombre = '$user'";
+        $resultadouser = $conexion->query($query);
+        $rower = $resultadouser->fetch_assoc();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +49,7 @@
                         <?php echo htmlspecialchars($_SESSION['user']); ?>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
-                        <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                        <li><a class="dropdown-item" href="perfil.html?id=<?php echo $rower['id']; ?>">Perfil</a></li>
                         <li><a class="dropdown-item" href="crear_manga.html">Subir Manga</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="logout.php">Salir</a></li>
@@ -60,37 +67,34 @@
     <h2 class="text-center">Mangas Destacados</h2>
     <p class="text-center mb-4">Descubre los mangas más populares y recomendados.</p>
     <div class="row">
-        <!-- Ejemplo de Manga -->
+    <?php 
+        // Consulta para obtener solo 3 mangas específicos
+        $query = "SELECT id, titulo, descripcion, portada FROM Mangas LIMIT 3";
+        $resultado = $conexion->query($query);
+        // Verificar si hay resultados
+        if ($resultado && $resultado->num_rows > 0) {
+            while ($row = $resultado->fetch_assoc()) {
+                // Extraer los datos de cada manga
+                $titulo = htmlspecialchars($row['titulo']);
+                $descripcion = htmlspecialchars($row['descripcion']);
+                $portada = 'data:image/jpeg;base64,' . base64_encode($row['portada']);  // Convertir BLOB a base64
+    ?>
         <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="./images/kimetsu.jpg" class="card-img-top" alt="Portada Manga 1">
+                <img src="<?php echo $portada; ?>" class="card-img-top" alt="Portada de <?php echo $titulo; ?>">
                 <div class="card-body card-body-dest">
-                    <h5 class="card-title">Demon Slayer</h5>
-                    <p class="card-text">Una historia épica de demonios y espadas.</p>
-                    <a href="#" class="btn btn-primary">Leer Manga</a>
+                    <h5 class="card-title"><?php echo $titulo; ?></h5>
+                    <p class="card-text"><?php echo $descripcion; ?></p>
+                    <a href="./manga.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Leer Manga</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="./images/myhero.jpg" class="card-img-top" alt="Portada Manga 2">
-                <div class="card-body card-body-dest">
-                    <h5 class="card-title">My Hero Academia</h5>
-                    <p class="card-text">La historia de un chico sin poderes en un mundo de héroes que busca convertirse en el mejor.</p>
-                    <a href="#" class="btn btn-primary">Leer Manga</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="./images/onepiece.jpg" class="card-img-top" alt="Portada Manga 3">
-                <div class="card-body card-body-dest">
-                    <h5 class="card-title">One Piece</h5>
-                    <p class="card-text">Aventuras de piratas en busca del tesoro legendario.</p>
-                    <a href="#" class="btn btn-primary">Leer Manga</a>
-                </div>
-            </div>
-        </div>
+    <?php
+            }
+        } else {
+            echo "<p>No se encontraron mangas.</p>";
+        }
+    ?>
     </div>
 </section>
 <style>

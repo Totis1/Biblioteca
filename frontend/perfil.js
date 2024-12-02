@@ -2,12 +2,22 @@ const apiUrl = 'http://localhost/biblioteca/src/index.php'
 const frmActualizar = document.getElementById("frmActualizar")
 const submitBtn = document.getElementById("submitBtn")
 const apinewUrl = 'http://localhost/biblioteca/src/routes/ImagenUsuarioRoute.php'
+const urlParams = new URLSearchParams(window.location.search)
+const userId = urlParams.get('id')
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (userId){
+        console.log("ID del Usuario:", userId)
+    }else{
+        window.location.href = "http://localhost/biblioteca/frontend/index.php"
+    }
+    
+})
 
 const actualizarUsuario = async () => {
     const imagen = document.getElementById('foto_perfil').files[0]
-    const Identi = document.getElementById('id').value
     usuario = {
-        id: Identi,
+        id: userId,
         nombre: document.getElementById('nombre').value,
         email: document.getElementById('email').value,
         contrasena: document.getElementById('contrasena').value
@@ -25,7 +35,7 @@ const actualizarUsuario = async () => {
     const response = await res.json()
     console.log("XD->",response)
     if (response.mensaje === 'Usuario SemiActualizado'){
-        actualizarImagen(Identi,imagen)
+        actualizarImagen(userId,imagen)
     }
 }
 
@@ -42,7 +52,7 @@ const actualizarImagen = async (id, imagen) => {
     const response = await res.json()
     console.log("Imagen->",response)
     if(response.mensaje === 'Usuario Actualizado'){
-        window.location.href = 'https://localhost/biblioteca/frontend/index.html'
+        window.location.href = 'http://localhost/biblioteca/frontend/login.php'
         console.log("Imagen actualizada")
     } 
     else{
