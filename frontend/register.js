@@ -25,7 +25,7 @@ const crearUsuario = async () => {
     if (response.mensaje === 'Usuario Creado'){
         // Redirigir después de 3 segundos
         setTimeout(function() {
-            window.location.href = 'https://localhost/biblioteca/frontend/index.html';
+            window.location.href = 'http://localhost/biblioteca/frontend/index.html';
         }, 500);  // 3000 milisegundos = 3 segundos 
     }
 }

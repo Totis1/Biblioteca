@@ -29,14 +29,15 @@ function cargarMangas(mangas) {
         // Crear el contenedor de la card
         const colDiv = document.createElement('div');
         colDiv.className = 'col-6 col-sm-6 col-md-4 col-lg-3 manga-item';
-        colDiv.setAttribute('data-title', manga.title);
+        colDiv.setAttribute('data-title', manga.titulo);
+
 
         // Contenido de la card
         colDiv.innerHTML = `
             <div class="card">
                 <a href="${manga.link}" class="card-body card-body-custom">
-                    <img src="${manga.image}" alt="${manga.title}" height="" width="270vh">
-                    <h3 class="card-title">${manga.title}</h3>
+                    <img src="${manga.image}" alt="${manga.titulo}" height="" width="270vh">
+                    <h3 class="card-title">${manga.titulo}</h3>
                 </a>
             </div>`
 

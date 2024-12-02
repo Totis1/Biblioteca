@@ -27,20 +27,28 @@
                     <input id="searchInput" type="text" class="form-control" placeholder="Buscar manga por título...">
                 </div>
                 <br>
-                
+                <?php 
+                    include_once("../src/config/base.php");
+                    $query = "SELECT * FROM mangas";
+                    $resultado = $conexion->query($query);
+                ?>
                 <!-- Lista de mangas -->
-                 <div id="mangaList" class="row">
-                     <!-- Manga ejemplo 
-                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 manga-item" data-title="Kimetsu no Yaiba">
-                        <div class="card">
-                            <a href="./index.php" class="card-body card-body-custom">
-                                <img src="./images/kimetsu.jpg" alt="Kimetsu no Yaiba" height="100%" width="100%">
-                                <h3 class="card-title">Kimetsu no Yaiba</h3>
-                            </a>
+                <div id="mangaList" class="row">
+                    <?php
+                    while ($row = $resultado->fetch_assoc()) {
+                        ?>
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 manga-item" data-title="<?php echo htmlspecialchars($row['titulo']); ?>">
+                            <div class="card">
+                                <a href="./manga.php?id=<?php echo $row['id']; ?>" class="card-body card-body-custom">
+                                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['portada']); ?>" alt="<?php echo htmlspecialchars($row['titulo']); ?>" height="100%" width="100%">
+                                    <h3 class="card-title"><?php echo htmlspecialchars($row['titulo']); ?></h3>
+                                </a>
+                            </div>
                         </div>
-                     </div> -->
-
-                 </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </div>
@@ -54,7 +62,6 @@
         <a href="#" class="text-white">Términos y Condiciones</a>
     </p>
 </footer>
-<script src="./mostrar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
