@@ -300,7 +300,7 @@
         <!-- Acción -->
         <div class="col-md-4 mb-4">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body card-body-dest">
                     <h5 class="card-title">Acción</h5>
                     <p class="card-text">Mangas llenos de adrenalina y aventuras.</p>
                     <a href="#" class="btn btn-primary">Ver Acción</a>
@@ -310,7 +310,7 @@
         <!-- Romance -->
         <div class="col-md-4 mb-4">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body card-body-dest">
                     <h5 class="card-title">Romance</h5>
                     <p class="card-text">Las historias de amor más conmovedoras.</p>
                     <a href="#" class="btn btn-primary">Ver Romance</a>
@@ -320,7 +320,7 @@
         <!-- Comedia -->
         <div class="col-md-4 mb-4">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body card-body-dest">
                     <h5 class="card-title">Comedia</h5>
                     <p class="card-text">Ríe con los mangas más divertidos.</p>
                     <a href="#" class="btn btn-primary">Ver Comedia</a>

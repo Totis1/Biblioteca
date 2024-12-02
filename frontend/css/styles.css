@@ -17,6 +17,17 @@ main {
     flex: 1; /* Ocupa el espacio restante entre header y footer */
 }
 
+/* Estilos generales */
+body {
+    background-color: #19242e; /* Color de fondo opcional */
+    color: #fcfcfc;
+}
+
+.card {
+    margin: 0; /* Asegura que la tarjeta general no tenga margen */
+    border: none; /* Evita márgenes generados por bordes */
+    border-radius: 5px; /* Bordes redondeados */
+}
 
 .card-title {
     color: #111315; /* Títulos oscuros */
@@ -28,11 +39,17 @@ main {
 }
 
 .btn-primary:hover {
-    background-color: #202D36;
+    background-color: #45535d;
+}
+
+.btn-primary:active {
+    background-color: #18202a; /* Color al hacer clic */
+    border-color: #18202a; 
 }
 
 .card-body-dest {
     background-color: #5c7896cc; /* Destacados color de fondo */
+    
 }
 
 .card-body-custom {
@@ -72,11 +89,6 @@ main {
     margin: 10px; /* Espaciado entre las tarjetas */
 } 
 
-/* Estilos generales */
-body {
-    background-color: #19242e; /* Color de fondo opcional */
-    color: #fcfcfc;
-}
 
 /* Card de inicio de sesión */
 .login-card {
@@ -120,3 +132,28 @@ body {
     margin-left: 5px;
     font-size: 0.9rem;
 }
+
+.form-control:focus {
+    background-color: #d5d5d5; /* Fondo más claro al enfocarse */
+    border-color: #5a6a7d; /* Cambio de color de borde */
+    outline: none; /* Sin borde extra */
+    box-shadow: none; /* Sin sombra */
+}
+
+
+.btn-block {
+    width: 100%; /* Botones completamente alineados */
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.form-group.row .col-sm-4 {
+    text-align: center;
+}
+
+/* Espaciado entre elementos */
+.form-group {
+    margin-bottom: 1.5rem; /* Espaciado entre campos */
+}
+
