@@ -142,7 +142,7 @@ body {
 
 
 .btn-block {
-    width: 100%; /* Botones completamente alineados */
+    width: 100%; /* Botones alineados */
     font-size: 1rem;
     padding: 0.5rem;
     border-radius: 5px;
@@ -157,3 +157,7 @@ body {
     margin-bottom: 1.5rem; /* Espaciado entre campos */
 }
 
+.card-act {
+    max-width: 500px; 
+    margin: 0 auto;
+}
