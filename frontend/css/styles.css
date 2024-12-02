@@ -1,10 +1,36 @@
+html, body {
+    height: 100%; /* Asegurar que ocupen toda la altura */
+    margin: 0; /* Eliminar márgenes predeterminados */
+    display: flex;
+    flex-direction: column; /* Diseño en columna */
+}
+
+
 header, footer {
     background-color: #0a0909d8; /* Fondo oscuro */
     color: #f8f9fa; /* Texto claro */
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    flex: 1; /* Ocupa el espacio restante entre header y footer */
+}
+
+/* Estilos generales */
+body {
+    background-color: #19242e; /* Color de fondo opcional */
+    color: #fcfcfc;
+}
+
+.card {
+    margin: 0; /* Asegura que la tarjeta general no tenga margen */
+    border: none; /* Evita márgenes generados por bordes */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 .card-title {
-    color: #343a40; /* Títulos oscuros */
+    color: #111315; /* Títulos oscuros */
 }
 
 .btn-primary {
@@ -13,11 +39,17 @@ header, footer {
 }
 
 .btn-primary:hover {
-    background-color: #202D36;
+    background-color: #45535d;
+}
+
+.btn-primary:active {
+    background-color: #18202a; /* Color al hacer clic */
+    border-color: #18202a; 
 }
 
 .card-body-dest {
     background-color: #5c7896cc; /* Destacados color de fondo */
+    
 }
 
 .card-body-custom {
@@ -57,11 +89,6 @@ header, footer {
     margin: 10px; /* Espaciado entre las tarjetas */
 } 
 
-/* Estilos generales */
-body {
-    background-color: #f8f9fa; /* Color de fondo opcional */
-    color: #212529;
-}
 
 /* Card de inicio de sesión */
 .login-card {
@@ -100,8 +127,37 @@ body {
     border-radius: 5px;
 }
 
-/* Opcional: mejorar la apariencia del checkbox */
+/* checkbox */
 .form-check-label {
     margin-left: 5px;
     font-size: 0.9rem;
+}
+
+.form-control:focus {
+    background-color: #d5d5d5; /* Fondo más claro al enfocarse */
+    border-color: #5a6a7d; /* Cambio de color de borde */
+    outline: none; /* Sin borde extra */
+    box-shadow: none; /* Sin sombra */
+}
+
+
+.btn-block {
+    width: 100%; /* Botones alineados */
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.form-group.row .col-sm-4 {
+    text-align: center;
+}
+
+/* Espaciado entre elementos */
+.form-group {
+    margin-bottom: 1.5rem; /* Espaciado entre campos */
+}
+
+.card-act {
+    max-width: 500px; 
+    margin: 0 auto;
 }
