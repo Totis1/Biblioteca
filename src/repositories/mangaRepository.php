@@ -18,7 +18,7 @@
 
         }
         public function mostrarMangas(){
-            $sql = 'SELECT * FROM mangas';
+            $sql = 'SELECT `id`,`titulo`,`descripcion`,`fecha_publicacion`,`id_autor`,`id_genero` FROM mangas';
             $resultado = $this->conn->prepare($sql);
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
