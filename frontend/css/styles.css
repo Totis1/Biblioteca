@@ -9,7 +9,7 @@ html, body {
 header, footer {
     background-color: #0a0909d8; /* Fondo oscuro */
     color: #f8f9fa; /* Texto claro */
-    text-align: center;
+    text-align: left;
     padding: 1rem;
 }
 
